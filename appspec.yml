@@ -4,13 +4,15 @@ files:
   - source: /
     destination: /home/kmh/CodeDeployGitHubDemo
 permissions:
+  # Permissions for the root app folder
   - object: /home/kmh
     pattern: "CodeDeployGitHubDemo"
     owner: kmh
     group: kmh
-  # - object: /home/kmh/CodeDeployGitHubDemo
-    # owner: kmh
-    # group: kmh
+  # Permissions for all the files+directories recurively within app folder
+  - object: /home/kmh/CodeDeployGitHubDemo
+    owner: kmh
+    group: kmh
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies
